@@ -105,39 +105,46 @@ let data = [
 
 let filter = document.querySelectorAll(".filter");
 
-window.onload=displayItems("weekly")
+window.onload = displayItems("weekly");
 filter.forEach((x) => {
-  x.addEventListener("click",e=>{
-    const elemId=e.target.getAttribute("id");
- displayItems(elemId)
-  })
+  x.addEventListener("click", (e) => {
+    const elemId = e.target.getAttribute("id");
+    displayItems(elemId);
+  });
 });
 
-function displayItems(elemId){
-  filter.forEach(x=>{
-  
-x.classList.remove("clicked"); 
+function displayItems(elemId) {
+  filter.forEach((x) => {
+    x.classList.remove("clicked");
   });
-  document.getElementById(elemId).classList.add("clicked")
+  document.getElementById(elemId).classList.add("clicked");
 
-data.forEach(i=>{
-  const cat=i.title.toLowerCase();
-  const hrs=`${cat}-hrs`
-  const prd=`${cat}-prd`
-  const heading=`${cat}-cat`
-  document.getElementById(heading).innerHTML=`${i.title}`
-  document.getElementById(hrs).innerHTML=`${i.timeframes[elemId].current}hrs`;
+  data.forEach((i) => {
+    const cat = i.title.toLowerCase();
+    const hrs = `${cat}-hrs`;
+    const prd = `${cat}-prd`;
+    const heading = `${cat}-cat`;
+    document.getElementById(heading).innerHTML = `${i.title}`;
+    document.getElementById(
+      hrs
+    ).innerHTML = `${i.timeframes[elemId].current}hrs`;
 
-  switch(elemId){
-    case "daily":
-     
-      document.getElementById(prd).innerHTML=`Yesterday - ${i.timeframes[elemId].previous}hrs`
-    break;
-  case "weekly":
- 
-      document.getElementById(prd).innerHTML=`Yesterday - ${i.timeframes[elemId].previous}hrs`
-  break;
-  case "monthly":
-      document.getElementById(prd).innerHTML=`Yesterday - ${i.timeframes[elemId].previous}hrs`
-  break;}
-})}
+    switch (elemId) {
+      case "daily":
+        document.getElementById(
+          prd
+        ).innerHTML = `Yesterday - ${i.timeframes[elemId].previous}hrs`;
+        break;
+      case "weekly":
+        document.getElementById(
+          prd
+        ).innerHTML = `Yesterday - ${i.timeframes[elemId].previous}hrs`;
+        break;
+      case "monthly":
+        document.getElementById(
+          prd
+        ).innerHTML = `Yesterday - ${i.timeframes[elemId].previous}hrs`;
+        break;
+    }
+  });
+}
