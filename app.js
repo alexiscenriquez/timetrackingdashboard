@@ -148,16 +148,17 @@ function displayItems(elemId) {
     }
   });
 }
+let weekly = document.getElementById("weekly").style.color = "white"
 
+function toggleStyle(e) {
+  for (let i = 0; i < filter.length; i++) {
 
+    filter[i].style = "none"
 
-function toggleStyle(e){
-  for(let i=0;i<filter.length;i++){
-  
-    filter[i].style="none"
-    }
-    e.style.color="white"}
-    
+  }
+  e.style.color = "white"
+}
+
 
 
 

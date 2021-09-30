@@ -38,6 +38,8 @@ body {
   flex-direction: column;
   align-content: space-between;
 }
+
+
 .ellipsis {
   background-image: url("images/icon-ellipsis.svg");
   height: 10px;
