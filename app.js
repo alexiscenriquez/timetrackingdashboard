@@ -148,3 +148,16 @@ function displayItems(elemId) {
     }
   });
 }
+
+
+
+function toggleStyle(e){
+  for(let i=0;i<filter.length;i++){
+  
+    filter[i].style="none"
+    }
+    e.style.color="white"}
+    
+
+
+
